@@ -2,10 +2,10 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: #000028;
   background-image: var(--bg-color);
   min-inline-size: 375px;
-  min-block-size: 668px;
-  font-family: "IBM Plex Mono";
+  font-family: "IBM Plex Mono", sans-serif;
   font-size: 18px;
   background-size: cover;
   background-position: center;
@@ -35,22 +35,22 @@
 }
 
 .decorated-zone::before {
-  border-top: 1px solid var(--text-color-accent);
-  border-right: 1px solid var(--text-color-accent);
+  border-bottom: 1px solid var(--text-color-accent);
+  border-left: 1px solid var(--text-color-accent);
   position: absolute;
-  right: 10px;
-  top: 10px;
+  left: 10px;
+  bottom: 10px;
   width: 25px;
   height: 25px;
   content: "";
 }
 
 .decorated-zone::after {
-  border-bottom: 1px solid var(--text-color-accent);
-  border-left: 1px solid var(--text-color-accent);
+  border-top: 1px solid var(--text-color-accent);
+  border-right: 1px solid var(--text-color-accent);
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  top: 10px;
+  right: 10px;
   width: 25px;
   height: 25px;
   content: "";
@@ -70,7 +70,7 @@
   height: max(100vh, 668px);
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
 }
 
 .header__theme-menu {
@@ -123,13 +123,15 @@
 
 .content {
   padding-top: 40px;
+  display: grid;
+  gap: 50px;
 }
 
 .section {
   display: grid;
   padding-left: 10px;
   padding-right: 10px;
-  margin-bottom: 51px;
+  
 }
 
 .section_title {
@@ -140,12 +142,28 @@
 .card {
   padding-top: 20px;
   display: grid;
-  gap: 10px;
+  gap: 20px;
   line-height: 130%;
+}
+.card_content {
+  gap: 11px;
+  display: grid;
+}
+
+.section_card {
+  display: grid;
+}
+
+.card_block {
+  gap: 10px;
 }
 
 .card_text {
   color: var(--text-color);
+}
+
+.card-text_rules {
+  gap: 10px;
 }
 
 .global {
@@ -175,6 +193,10 @@
   height: max(100vh, 668px);
   display: grid;
   align-content: center;
+  padding: 10px;
+  width: 100%;
+  margin-block-start: 40px;
+
 }
 
 .footer-title {
@@ -184,29 +206,7 @@
   text-shadow: 2px 2px 0 var(--accent-color);
   line-height: 84%;
   text-align: center;
-  padding-block-end: 5%;
-}
-
-.decorated-zone-footer::before {
-  border-top: 1px solid var(--text-color-accent);
-  border-right: 1px solid var(--text-color-accent);
-  position: absolute;
-  right: 10px;
-  top: 0px;
-  width: 25px;
-  height: 25px;
-  content: "";
-}
-
-.decorated-zone-footer::after {
-  border-bottom: 1px solid var(--text-color-accent);
-  border-left: 1px solid var(--text-color-accent);
-  position: absolute;
-  bottom: 20px;
-  left: 10px;
-  width: 25px;
-  height: 25px;
-  content: "";
+  padding-block-start: 5px;
 }
 
 .images-card {
@@ -232,13 +232,13 @@
   }
 
   .decorated-zone::before {
-      top: 20px;
-      right: 20px;
+      bottom: 20px;
+      left: 20px;
   }
 
   .decorated-zone::after {
-      bottom: 20px;
-      left: 20px;
+      top: 20px;
+      right: 20px;
   }
 
   .decor_item {
@@ -254,6 +254,8 @@
       display: grid;
       grid-template-columns: 1fr 2fr;
       grid-column-gap: 20px;
+      grid-template-rows: auto-fill;
+      
   }
 
   .card_dofamin {
@@ -289,47 +291,38 @@
       margin-block-start: 0.5em;
   }
 
+  .images {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .sunset {
       grid-column: span 2;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      
   }
 
   .ice-cream {
       grid-row: span 2;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      
   }
 
   .tape {
       grid-row: 2 / span 2;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+     
   }
 
   .street {
       grid-column: 2 / span 2;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      
   }
 
   .footer {
       height: max(100vh, 1024px);
-      margin-block-start: 80px;
+      margin-block-start: 57px;
+      padding: 20px;
   }
 
-  .decorated-zone-footer::before {
-      right: 20px;
-  }
-
-  .decorated-zone-footer::after {
-      bottom: 40px;
-      left: 20px;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -349,8 +342,9 @@
   }
 
   .header-title {
-      font-size: 157px;
+      font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
       align-self: center;
+      
   }
 
   .section-type_default {
@@ -368,7 +362,7 @@
   }
 
   .title-decor_card {
-      max-width: 315px;
+      min-width: 315px;
   }
 
   .card_block {
@@ -380,7 +374,7 @@
   }
 
   .footer-title {
-      font-size: 157px;
+      font-size: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
       padding-block-end: 3%;
   }
 

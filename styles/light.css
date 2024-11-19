@@ -4,15 +4,7 @@
   переключая тему
 */
 :root {
-  --bg-color: url(../images/cover-image-light.png);
-  --text-color: rgba(53, 52, 48, 1);
-  --main-font: 'IBM Plex mono';
-  --accent-color: rgba(255, 0, 112, 1);
-
-  --color-text-black: rgba(0, 0, 40, 1);
-  --base-font-size: 18px;
-  --accent-color-title: rgba(255, 0, 112, 1);
-
+  
 }
 
 .page.theme_light {
@@ -22,12 +14,11 @@
   */
   --bg-color: url(../images/cover-image-light.png);
   --text-color: rgba(53, 52, 48, 1);
-  --main-font: 'IBM Plex mono';
   --accent-color:rgba(255, 141, 203, 1);
-  --base-font-size: 18px;
   --title-color: rgba(255, 194, 230, 1);
   --accent-color-title: rgba(255, 0, 112, 1);
   --text-color-accent: rgba(53, 52, 48, 1);
+  --color-text-black: rgba(53, 52, 48, 1);
   }
 
 .theme_light .decor_item {
@@ -47,6 +38,7 @@
   --title-color: rgba(255, 194, 230, 1);
   --accent-color-title: rgba(255, 0, 112, 1);
   --text-color-accent: rgba(53, 52, 48, 1);
+  background-color: #fff1f7;
 }
 
 .header__theme-menu-button:hover {
@@ -59,7 +51,7 @@
 }
 
 @media (min-width: 1000px) {
-   .header-title {
+   .theme_light .header-title {
     text-shadow: 4px 4px 0 var(--accent-color-title);
 
   }
