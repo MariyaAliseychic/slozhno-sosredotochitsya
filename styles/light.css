@@ -3,9 +3,6 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
-:root {
-  
-}
 
 .page.theme_light {
   /* сохраните этот селектор в приведённом виде.
@@ -55,7 +52,18 @@
     text-shadow: 4px 4px 0 var(--accent-color-title);
 
   }
-   .footer-title {
+   .theme_light .footer-title {
     text-shadow: 2px 2px 0 var(--accent-color-title);
   }
+}
+
+@media (prefers-color-scheme: light) and (min-width: 1000px) {
+  .header-title {
+    text-shadow: 4px 4px 0 var(--accent-color-title);
+
+  }
+  .footer-title {
+    text-shadow: 2px 2px 0 var(--accent-color-title);
+  }
+
 }

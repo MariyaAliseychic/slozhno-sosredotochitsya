@@ -375,7 +375,6 @@
 
   .footer-title {
       font-size: clamp(7.25rem, 5.7694rem + 6.3174vw, 9.8125rem);
-      padding-block-end: 3%;
   }
 
   .footer {
